@@ -1,0 +1,255 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  info [
+    "Unviversal Robot UR3e, UR5e and UR10e grasping cans using Robotiq 3F grippers."
+  ]
+  title "Universal Robot"
+  basicTimeStep 8
+  physicsDisableAngularThreshold 0.1
+  coordinateSystem "NUE"
+  contactProperties [
+    ContactProperties {
+      bounce 0.1
+    }
+    ContactProperties {
+      material1 "slope"
+      coulombFriction [
+        0.5
+      ]
+    }
+  ]
+}
+Viewpoint {
+  orientation -0.22292533746304796 -0.9633357101207722 -0.1492936821271869 1.2363020128792952
+  position -3.87260992924921 2.6342206038944003 2.306773318363765
+  exposure 1.7
+}
+TexturedBackground {
+  texture "factory"
+}
+Floor {
+  size 17 5
+  appearance ThreadMetalPlate {
+  }
+}
+LeverValve {
+  translation -0.73 0.502 0.83
+}
+Solid {
+  translation 4.72725 0.649877 0.818
+  rotation 0.7152939337633755 0.6367579986986722 -0.2879129024802075 -6.543613035008027e-06
+  children [
+    DEF red_box Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 1
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  boundingObject USE red_box
+  physics Physics {
+  }
+  recognitionColors [
+    1 0 0
+  ]
+}
+Solid {
+  translation 3.01282085048692 0.6498766097621309 0.8179989928579959
+  rotation 0.7152939337633755 0.6367579986986722 -0.2879129024802075 -6.543613035008027e-06
+  children [
+    DEF red_box Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        roughness 1
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(6)"
+  boundingObject USE red_box
+  physics Physics {
+  }
+  recognitionColors [
+    1 0 0
+  ]
+}
+Solid {
+  translation 2.19562 0.64 0.818
+  rotation 0.7159731023274681 0.6361225565401891 -0.2876292923266937 -6.5500651555807505e-06
+  children [
+    DEF red_box Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        roughness 1
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+  boundingObject USE red_box
+  physics Physics {
+  }
+  recognitionColors [
+    0 0 1
+  ]
+}
+Solid {
+  translation 1.5128208496144038 0.6498737889260245 0.8179927369042356
+  rotation 0.7159731023274681 0.6361225565401891 -0.2876292923266937 -6.5500651555807505e-06
+  children [
+    DEF red_box Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+        roughness 1
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(5)"
+  boundingObject USE red_box
+  physics Physics {
+  }
+  recognitionColors [
+    0 0 1
+  ]
+}
+Solid {
+  translation 1 0.649863 0.8168
+  rotation 0.021760390413873378 0.6981155257133682 -0.7156543845788855 0.0026359507697508193
+  children [
+    DEF red_box Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        roughness 1
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject USE red_box
+  physics Physics {
+  }
+  recognitionColors [
+    0 1 0
+  ]
+}
+Solid {
+  translation 3.7862 0.65 0.818
+  rotation 0.7146127467749239 0.6373940908629271 -0.2881967992185571 -6.53716711270135e-06
+  children [
+    DEF red_box Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        roughness 1
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(3)"
+  boundingObject USE red_box
+  physics Physics {
+  }
+  recognitionColors [
+    0 1 0
+  ]
+}
+Solid {
+  translation 6.012820852231947 0.649882251434344 0.8180115047655158
+  rotation 0.7139295353209982 0.6380308313464179 -0.2884809817782494 -6.530727406921904e-06
+  children [
+    DEF red_box Shape {
+      appearance PBRAppearance {
+        baseColor 0 1 0
+        roughness 1
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(4)"
+  boundingObject USE red_box
+  physics Physics {
+  }
+  recognitionColors [
+    0 1 0
+  ]
+}
+SolidBox {
+  translation -0.135 0.305 0.0323
+  size 1.5 0.61 0.4
+  appearance GalvanizedMetal {
+  }
+}
+UR5e {
+  translation 0 0.61 0
+  rotation -0.5773502691896258 -0.5773502691896258 -0.5773502691896258 2.094395
+  controller "try1"
+  selfCollision FALSE
+  toolSlot [
+    Camera {
+      translation 0 0.04 0
+      rotation 1 0 0 1.83
+      recognitionColors [
+        0 0 1
+        0 1 0
+        1 0 0
+      ]
+      recognition Recognition {
+        maxObjects 10
+      }
+    }
+    Robotiq3fGripper {
+    }
+    DistanceSensor {
+      translation 0 0.1 0
+      rotation 0 0 1 1.570796
+    }
+  ]
+}
+ConveyorBelt {
+  translation 3.18 0 1.05
+  rotation 0 1 0 3.141592
+  size 8 0.6 0.7
+  appearance CorrugatedMetal {
+    textureTransform TextureTransform {
+      scale 6 3.1
+    }
+  }
+  borderHeight 0
+  speed 0.2
+}
+PlasticCrate {
+  translation 0.00782341 0.0992058 0.46993
+  rotation 0.08888645265496477 -0.34859097152158675 -0.9330506594542727 0.013418554696652474
+  name "plastic crate(1)"
+  size 0.6 0.4 0.45
+  mass 1
+}
+PlasticCrate {
+  translation 0.07321245593913175 -9.810000000012864e-05 -0.6798719792325038
+  rotation 6.253693042355349e-11 -1 -9.374525425078091e-11 7.769226547618879e-07
+  name "plastic crate(3)"
+  size 0.6 0.4 0.45
+  mass 1
+}
+PlasticCrate {
+  translation 0.108211 -9.81e-05 -1.39033
+  rotation -3.271835600291187e-10 -1 -4.2755925252133273e-10 4.295214441088131e-09
+  name "plastic crate(4)"
+  size 0.6 0.4 0.45
+  mass 1
+}
